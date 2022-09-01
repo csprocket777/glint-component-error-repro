@@ -1,0 +1,13 @@
+
+{{#let (element this.tagName) as |Tag|}}
+    <Tag
+        data-test-base-component
+        ...attributes
+        class={{this.class}}
+        {{on "click" this.clickHandler}}
+        {{did-insert this.extendedSetup}}
+        {{did-update this.extendedSetup this.popoverContent}}
+    >
+        {{yield this.elementId}}
+    </Tag>
+{{/let}}
